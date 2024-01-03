@@ -1,2 +1,2 @@
-# M-ETC
+# ScentedEAE
 Event Argument Extraction Model
