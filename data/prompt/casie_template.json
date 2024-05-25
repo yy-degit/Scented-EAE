@@ -1,0 +1,7 @@
+{
+    "Databreach":"Attacker using Tool or Attack-Pattern attacked Number-of-Victim Victim on Time at Place out of Purpose causing Number-of-Data Compromised-Data compromised and Damage-Amount monetary loss.",
+    "Phishing":"Attacker pretended to be the Trusted-Entity using Tool or Attack-Pattern attacked Victim on Time at Place out of Purpose causing Damage-Amount monetary loss .",
+    "Ransom":"Attacker using Tool or Attack-Pattern ransomed Victim for Price on Time at Place through Payment-Method causing Damage-Amount monetary loss .",
+    "DiscoverVulnerability":"Discoverer found Vulnerability ( CVE ) with Capabilities of Vulnerable_System in Vulnerable_System_Version supported by Supported_Platform owned by Vulnerable_System_Owner on Time .",
+    "PatchVulnerability":"Releaser released the Patch of Patch-Number on Time to fix Vulnerability ( CVE ) of Vulnerable_System in Vulnerable_System_Version supported by Supported_Platform that Issues-Addressed ."
+}

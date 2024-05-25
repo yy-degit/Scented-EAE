@@ -1,0 +1,204 @@
+{
+    "role_entity_types": [
+        "People or Organization",
+        "Vehicle or Facility",
+        "Location"
+    ],
+    "role_entity_map": {
+        "Person": "People or Organization",
+        "Entity": "People or Organization",
+        "Defendant": "People or Organization",
+        "Prosecutor": "People or Organization",
+        "Plaintiff": "People or Organization",
+        "Buyer": "People or Organization",
+        "Artifact": "Vehicle or Facility",
+        "Seller": "People or Organization",
+        "Destination": "Location",
+        "Origin": "Location",
+        "Vehicle": "Vehicle or Facility",
+        "Agent": "People or Organization",
+        "Attacker": "People or Organization",
+        "Target": "People or Organization",
+        "Victim": "People or Organization",
+        "Instrument": "Vehicle or Facility",
+        "Giver": "People or Organization",
+        "Recipient": "People or Organization",
+        "Org": "People or Organization",
+        "Place": "Location",
+        "Adjudicator": "People or Organization",
+        "Beneficiary": "People or Organization"
+    },
+    "merge_entities": [
+        "People or Organization",
+        "Vehicle or Facility",
+        "Location"
+    ],
+    "event_role_entity_map": {
+        "Conflict.Attack": {
+            "Attacker": "People or Organization",
+            "Place": "Location",
+            "Target": "People or Organization",
+            "Instrument": "Vehicle or Facility",
+            "Victim": "People or Organization"
+        },
+        "Personnel.Elect": {
+            "Place": "Location",
+            "Entity": "People or Organization",
+            "Person": "People or Organization"
+        },
+        "Contact.Phone-Write": {
+            "Entity": "People or Organization",
+            "Place": "Location"
+        },
+        "Life.Die": {
+            "Place": "Location",
+            "Agent": "People or Organization",
+            "Victim": "People or Organization",
+            "Instrument": "Vehicle or Facility"
+        },
+        "Business.Start-Org": {
+            "Agent": "People or Organization",
+            "Org": "People or Organization",
+            "Place": "Location"
+        },
+        "Movement.Transport": {
+            "Artifact": "Vehicle or Facility",
+            "Destination": "Location",
+            "Origin": "Location",
+            "Agent": "People or Organization",
+            "Vehicle": "Vehicle or Facility"
+        },
+        "Personnel.End-Position": {
+            "Person": "People or Organization",
+            "Entity": "People or Organization",
+            "Place": "Location"
+        },
+        "Justice.Convict": {
+            "Defendant": "People or Organization",
+            "Adjudicator": "People or Organization",
+            "Place": "Location"
+        },
+        "Justice.Trial-Hearing": {
+            "Defendant": "People or Organization",
+            "Place": "Location",
+            "Prosecutor": "People or Organization",
+            "Adjudicator": "People or Organization"
+        },
+        "Life.Marry": {
+            "Person": "People or Organization",
+            "Place": "Location"
+        },
+        "Contact.Meet": {
+            "Entity": "People or Organization",
+            "Place": "Location"
+        },
+        "Justice.Sentence": {
+            "Defendant": "People or Organization",
+            "Adjudicator": "People or Organization",
+            "Place": "Location"
+        },
+        "Personnel.Start-Position": {
+            "Person": "People or Organization",
+            "Entity": "People or Organization",
+            "Place": "Location"
+        },
+        "Business.Merge-Org": {
+            "Org": "People or Organization"
+        },
+        "Business.Declare-Bankruptcy": {
+            "Org": "People or Organization",
+            "Place": "Location"
+        },
+        "Transaction.Transfer-Money": {
+            "Giver": "People or Organization",
+            "Recipient": "People or Organization",
+            "Beneficiary": "People or Organization",
+            "Place": "Location"
+        },
+        "Life.Divorce": {
+            "Person": "People or Organization",
+            "Place": "Location"
+        },
+        "Justice.Acquit": {
+            "Adjudicator": "People or Organization",
+            "Defendant": "People or Organization"
+        },
+        "Life.Injure": {
+            "Victim": "People or Organization",
+            "Agent": "People or Organization",
+            "Place": "Location",
+            "Instrument": "Vehicle or Facility"
+        },
+        "Transaction.Transfer-Ownership": {
+            "Artifact": "Vehicle or Facility",
+            "Seller": "People or Organization",
+            "Beneficiary": "People or Organization",
+            "Buyer": "People or Organization",
+            "Place": "Location"
+        },
+        "Justice.Sue": {
+            "Adjudicator": "People or Organization",
+            "Defendant": "People or Organization",
+            "Plaintiff": "People or Organization",
+            "Place": "Location"
+        },
+        "Justice.Appeal": {
+            "Adjudicator": "People or Organization",
+            "Plaintiff": "People or Organization",
+            "Place": "Location"
+        },
+        "Personnel.Nominate": {
+            "Person": "People or Organization",
+            "Agent": "People or Organization"
+        },
+        "Justice.Execute": {
+            "Person": "People or Organization",
+            "Place": "Location",
+            "Agent": "People or Organization"
+        },
+        "Life.Be-Born": {
+            "Person": "People or Organization",
+            "Place": "Location"
+        },
+        "Justice.Charge-Indict": {
+            "Adjudicator": "People or Organization",
+            "Defendant": "People or Organization",
+            "Prosecutor": "People or Organization",
+            "Place": "Location"
+        },
+        "Conflict.Demonstrate": {
+            "Entity": "People or Organization",
+            "Place": "Location"
+        },
+        "Business.End-Org": {
+            "Org": "People or Organization",
+            "Place": "Location"
+        },
+        "Justice.Arrest-Jail": {
+            "Person": "People or Organization",
+            "Place": "Location",
+            "Agent": "People or Organization"
+        },
+        "Justice.Fine": {
+            "Entity": "People or Organization",
+            "Place": "Location",
+            "Adjudicator": "People or Organization"
+        },
+        "Justice.Extradite": {
+            "Person": "People or Organization",
+            "Origin": "Location",
+            "Agent": "People or Organization",
+            "Destination": "Location"
+        },
+        "Justice.Release-Parole": {
+            "Place": "Location",
+            "Person": "People or Organization",
+            "Entity": "People or Organization"
+        },
+        "Justice.Pardon": {
+            "Place": "Location",
+            "Adjudicator": "People or Organization",
+            "Defendant": "People or Organization"
+        }
+    }
+}
