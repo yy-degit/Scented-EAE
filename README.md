@@ -50,10 +50,26 @@ bash preprocess.sh  # set dataset=ere, need_ere_preprocess=true
 - Check `/preprocess/ace(or aceplus/ere)` for more preprocessing details.
 
 ## Training and Evaluation
-1. 
+1. Configure runtime environment
+```
+pip install -r requirements.txt
+```
 
+2. train and evaluate
+```
+bash run.sh
+```
 
+- Check `/scripts` for more training configuration.
 
-1. 运行preprocess.sh得到模型可读入数据
-2. 运行run.sh训练评估测试
-3. scripts里面是每个模型的训练参数
+## Reference
+```
+@inproceedings{yang2024scented,
+  title={Scented-EAE: Stage-Customized Entity Type Embedding for Event Argument Extraction},
+  author={Yang, Yu and Guo, Jinyu and Shuang, Kai and Mao, Chenrui},
+  booktitle={Findings of the Association for Computational Linguistics ACL 2024},
+  pages={5222--5235},
+  year={2024}
+}
+```
+
