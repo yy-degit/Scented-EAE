@@ -191,37 +191,6 @@ def aceplus(data):
     return res
 
 
-def casie(data):
-    res = list()
-    for row in data:
-        example = OrderedDict()        
-        example["doc_id"] = row["id"]
-        example["sentence_id"] = row["sentence_id"]
-        example["text"] = row["tokens"]
-        entities = row["entities"]
-        events = row["events"]
-        entity_list = list()
-        entity_id_dict = dict()
-        for entity in entities:
-            entity_list.append({"id": entity["id"], "type": entity["type"], "span": [entity["indexes"][0], entity["indexes"][-1]+1], "word": entity["word"]})
-        entity_list.sort(key=lambda x:(x["span"][0],x["span"][1]))
-        for i,entity in enumerate(entity_list):
-            entity_id_dict[entity["id"]] = i
-            entity_list[i]["id"] = i
-        example["entities"] = entity_list
-        event_list = list()
-        for event in events:
-            one_event = {"type": event["type"], "trigger": {"span": [event["indexes"][0], event["indexes"][-1]+1], "word": event["word"]}, "mentions": []}
-            for argument in event["arguments"]:
-                one_event["mentions"].append({"role": argument["role"], "span": [argument["indexes"][0], argument["indexes"][-1]+1], "word": argument["word"], "entity_id": entity_id_dict[argument["id"]]})
-            one_event["mentions"].sort(key=lambda x:(x["entity_id"],x["span"][0],x["span"][1]))
-            event_list.append(one_event)
-        event_list.sort(key=lambda x:(x["trigger"]["span"][0],x["trigger"]["span"][1]))
-        example["events"] = event_list
-        res.append(example)
-    return res
-
-
 def ere(data):
     res = list()
     for row in data:
@@ -262,7 +231,6 @@ if __name__ == "__main__":
     dataset_map_func = {
         "ace": ace,
         "aceplus": aceplus,
-        "casie": casie,
         "ere": ere
     }    
     ace_entity_mapping = {
