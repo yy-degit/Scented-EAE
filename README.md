@@ -40,12 +40,14 @@ python
 >> import nltk 
 >> nltk.download('punkt')
 >> exit()
-# if downloading nltk fails, you can download [punkt.zip](), unzip it and move to `/root/nltk_data/tokenizers/punkt`
-
+# if downloading nltk fails, you can download [punkt.zip](https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/tokenizers/punkt.zip), unzip it and move to `/root/nltk_data/tokenizers/punkt`
+bash preprocess.sh  # set dataset=aceplus, need_aceplus_preprocess=true
 
 # ERE
+bash preprocess.sh  # set dataset=ere, need_ere_preprocess=true
 ```
 
+- Check `/preprocess/ace(or aceplus/ere)` for more preprocessing details.
 
 6. a 
 
