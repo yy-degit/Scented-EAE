@@ -1,14 +1,9 @@
-# Usage: `pip install -r requirements.txt``
-
-# Modeling
-
 torch==1.2.0
 allennlp==0.9.0
-
-
-# Data munging
-
 pandas==0.25.2
 beautifulsoup4==4.8.1
 lxml
 python-Levenshtein
+
+# modify spacy version to 2.0.18
+# download en_core_web_sm==2.0.0 from https://github.com/explosion/spacy-models/releases/tag/en_core_web_sm-2.0.0 and pip install it
