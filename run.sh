@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-# -*- coding:utf-8 -*-
 EXP_ID=$(date +%F-%H-%M-$RANDOM)
 export CUDA_VISIBLE_DEVICES=0
 export task=ALL
