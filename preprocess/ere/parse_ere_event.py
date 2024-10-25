@@ -1201,10 +1201,10 @@ def ere_to_oneie(input_file: str,
                 'doc_id': inst['doc_id'],
                 'sent_id': inst['sent_id'],
                 'tokens': tokens,
-                'pieces': pieces,
-                'token_lens': token_lens,
+                # 'pieces': pieces,
+                # 'token_lens': token_lens,
                 'entity_mentions': entity_mentions,
-                # 'relation_mentions': relation_mentions,
+                'relation_mentions': relation_mentions,
                 'event_mentions': event_mentions
             }
             res.append(one)
@@ -1295,7 +1295,7 @@ def parse_arguments() -> Namespace:
 def main():
     args = parse_arguments()
 
-    model_name = args.bert
+    model_name = args.bert.split("/")[-1]
     cache_dir = args.bert_cache_dir
 
     # Create a tokenizer based on the model name
