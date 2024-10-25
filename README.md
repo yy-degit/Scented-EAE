@@ -1,5 +1,5 @@
 # Scented-EAE
-Scented-EAE: Stage-Customized Entity Type Embedding for Event Argument Extraction - [Paper](https://aclanthology.org/2024.findings-acl.309.pdf) (Findings of ACL 2024)
+Scented-EAE: Stage-Customized Entity Type Embedding for Event Argument Extraction - [[Paper](https://aclanthology.org/2024.findings-acl.309.pdf)] (ACL Findings)
 
 
 ## Data Preprocessing
@@ -18,6 +18,10 @@ Scented-EAE: Stage-Customized Entity Type Embedding for Event Argument Extractio
     -- different template/map.json
   -- raw_data
 ```
+
+2. Download the [[ACE05](https://catalog.ldc.upenn.edu/LDC2006T06)] / [[ERE](https://catalog.ldc.upenn.edu/LDC2023T04)] raw datasets.
+
+3. 
 
 
 
