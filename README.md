@@ -23,7 +23,23 @@ Scented-EAE: Stage-Customized Entity Type Embedding for Event Argument Extractio
 
 3. After extracting the above dataset archives, place the contents of the subdirectories into `data/dataset/ace` and `data/dataset/ere` respectively.
 
-4. install 
+4. Obtain the ACE05 / ACE05+ / ERE data for training and evaluation.
+
+```
+# ACE05
+conda deactivate
+conda create --name eae-preprocess python=3.7
+conda activate eae-preprocess
+pip install -r preprocess/ace/requirements.txt
+bash preprocess.sh  # set dataset=ace, need_ace_preprocess=true
+
+# ACE05+
+
+# ERE
+```
+
+
+6. a 
 
 
 
