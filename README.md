@@ -49,7 +49,8 @@ bash preprocess.sh  # set dataset=ere, need_ere_preprocess=true
 
 - Check `/preprocess/ace(or aceplus/ere)` for more preprocessing details.
 
-6. a 
+## Training and Evaluation
+1. 
 
 
 
