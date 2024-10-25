@@ -30,10 +30,18 @@ Scented-EAE: Stage-Customized Entity Type Embedding for Event Argument Extractio
 conda deactivate
 conda create --name eae-preprocess python=3.7
 conda activate eae-preprocess
-pip install -r preprocess/ace/requirements.txt
+pip install -r preprocess/ace/requirements.txt # need read to download something manually
 bash preprocess.sh  # set dataset=ace, need_ace_preprocess=true
 
 # ACE05+
+pip install transformers==3.0.2 (It seems using transformers 3.1+ may cause some model loading issue)
+pip install tqdm
+python
+>> import nltk 
+>> nltk.download('punkt')
+>> exit()
+# if downloading nltk fails, you can download [punkt.zip](), unzip it and move to `/root/nltk_data/tokenizers/punkt`
+
 
 # ERE
 ```
