@@ -21,7 +21,9 @@ Scented-EAE: Stage-Customized Entity Type Embedding for Event Argument Extractio
 
 2. Download the [[ACE05](https://catalog.ldc.upenn.edu/LDC2006T06)] / [[ERE](https://catalog.ldc.upenn.edu/LDC2023T04)] raw datasets.
 
-3. 
+3. After extracting the above dataset archives, place the contents of the subdirectories into `data/dataset/ace` and `data/dataset/ere` respectively.
+
+4. install 
 
 
 
