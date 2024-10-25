@@ -146,6 +146,7 @@ def ace(data):
                 one_event = {"type": event[0][1], "trigger": {"span": [event[0][0]-s_start, event[0][0]-s_start+1], "word": text[event[0][0]-s_start: event[0][0]-s_start+1]}, "mentions": []}
                 for argument in event[1:]:
                     argument_span = [argument[0]-s_start, argument[1]-s_start+1]
+                    argument[2] = special_modification("ace", event[0][1], argument[2])
                     one_event["mentions"].append({"role": argument[2], "span": argument_span, "word": text[argument_span[0]: argument_span[1]], "entity_id": entity_span_list.index(argument_span)})
                 one_event["mentions"].sort(key=lambda x:(x["entity_id"],x["span"][0],x["span"][1]))
                 event_list.append(one_event)
@@ -182,6 +183,7 @@ def aceplus(data):
             one_event = {"type": event["event_type"].replace(":","."), "trigger": {"span": [event["trigger"]["start"], event["trigger"]["end"]], "word": text[event["trigger"]["start"]: event["trigger"]["end"]]}, "mentions": []}
             for argument in event["arguments"]:
                 argument_span = entity_span_dict[argument["entity_id"]]
+                argument["role"] = special_modification("aceplus", event["event_type"].replace(":","."), argument["role"])
                 one_event["mentions"].append({"role": argument["role"], "span": argument_span, "word": text[argument_span[0]: argument_span[1]], "entity_id": entity_id_dict[argument["entity_id"]]})
             one_event["mentions"].sort(key=lambda x:(x["entity_id"],x["span"][0],x["span"][1]))
             event_list.append(one_event)
@@ -224,6 +226,16 @@ def ere(data):
         example["events"] = event_list
         res.append(example)
     return res
+
+
+def special_modification(dataset, event_type, role):
+    assert dataset in ["ace", "aceplus", "ere"], "Invalid dataset name for special modification!"
+    if dataset == "ace" or dataset == "aceplus":
+        if event_type == "Movement.Transport" and role == "Place":
+            role = "Destination"
+        if event_type == "Life.Die" and role == "Person":
+            role = "Victim"
+    return role
 
 
 
