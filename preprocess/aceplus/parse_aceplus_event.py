@@ -1070,6 +1070,28 @@ def convert_to_shorter_oneie(input_path: str,
                         'start': entity['start'],
                         'end': entity['end']
                     })
+                    
+                # relations
+                relations = []
+                for relation in sentence['relations']:
+                    relations.append({
+                        'id': relation['relation_id'],
+                        'relation_type': relation['relation_type'],
+                        'relation_subtype': '{}:{}'.format(relation['relation_type'],
+                                                           relation['relation_subtype']),
+                        'arguments': [
+                            {
+                                'entity_id': relation['arg1']['mention_id'],
+                                'text': relation['arg1']['text'],
+                                'role': relation['arg1']['role']
+                            },
+                            {
+                                'entity_id': relation['arg2']['mention_id'],
+                                'text': relation['arg2']['text'],
+                                'role': relation['arg2']['role']
+                            }
+                        ]
+                    })
 
                 # events
                 events = []
@@ -1093,6 +1115,7 @@ def convert_to_shorter_oneie(input_path: str,
                     'sent_id': sentence['sent_id'],
                     'tokens': tokens,
                     'entity_mentions': entities,
+                    'relation_mentions': relations,
                     'event_mentions': events
                 }
                 res.append(sent_obj)
@@ -1129,15 +1152,25 @@ def split_data(input_file: str,
         open(os.path.join(output_dir, 'train.json'), 'w') as w_train, \
         open(os.path.join(output_dir, 'valid.json'), 'w') as w_dev, \
         open(os.path.join(output_dir, 'test.json'), 'w') as w_test:
-        for line in r:
-            inst = json.loads(line)
+        insts = json.load(r)
+        train_list = list()
+        dev_list = list()
+        test_list = list()
+        
+        for inst in insts:
             doc_id = inst['doc_id']
             if doc_id in train_docs:
-                w_train.write(line)
+                # w_train.write(line)
+                train_list.append(inst)
             elif doc_id in dev_docs:
-                w_dev.write(line)
+                # w_dev.write(line)
+                dev_list.append(inst)
             elif doc_id in test_docs:
-                w_test.write(line)
+                # w_test.write(line)
+                test_list.append(inst)
+        json.dump(train_list, w_train, ensure_ascii=False, indent=4)
+        json.dump(dev_list, w_dev, ensure_ascii=False, indent=4)
+        json.dump(test_list, w_test, ensure_ascii=False, indent=4)
 
 
 if __name__ == '__main__':
@@ -1164,7 +1197,7 @@ if __name__ == '__main__':
     input_dir = os.path.join(args.input, args.lang.title())
 
     # Create a tokenizer based on the model name
-    model_name = args.bert
+    model_name = args.bert.split("/")[-1]
     cache_dir = args.bert_cache_dir
     if model_name.startswith('bert-'):
         tokenizer = BertTokenizer.from_pretrained(model_name,
